@@ -31,6 +31,10 @@ vNumCLPoints, and assign it to the slider.
 
 For SPC, typically between 11 and 25 data points forms a good basis for initial control limits
 
+
+![image](https://user-images.githubusercontent.com/3278367/70189104-45f40600-16ea-11ea-87af-26e1feb58f1c.png)
+
+
 =// Centre line
 if(RowNo()=1,RangeAvg(below(p,0,$(vNumCLPoints))),
 If(RowNo()> 1, Above((Centre))))
