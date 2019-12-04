@@ -21,6 +21,8 @@ These chart expressions also work in Sense.
 Assuming you are using the sample data, we will need to specify the 'Type' variable in the set analysis.
 This may not be necessary with your real life data
 
+# p
+
 ![image](https://user-images.githubusercontent.com/3278367/70189030-193fee80-16ea-11ea-8b6a-3a510edb1546.png)
 
 //p  
@@ -32,6 +34,7 @@ vNumCLPoints, and assign it to the slider.
 
 For SPC, typically between 11 and 25 data points forms a good basis for initial control limits
 
+# Centre Line
 
 ![image](https://user-images.githubusercontent.com/3278367/70189104-45f40600-16ea-11ea-87af-26e1feb58f1c.png)
 
@@ -47,9 +50,18 @@ In short - we are locking the centre line to the average of these first n rows.
 
 Now the key to getting this working properly - calculating the standard deviation.
 
-* Do not use the built in StdDev functions *
+# SD
 
 ![image](https://user-images.githubusercontent.com/3278367/70189476-4fca3900-16eb-11ea-8793-725ab79c60db.png)
+
+=//SD  
+
+sqrt((Centre * (1 - Centre))/ sum({$<Type ={"P"}>}[Denominator]))
+
+
+# Control Limits
+
+There are Upper and Lower Control limits, and Upper and Lower Warning Limits.
 
 
 
