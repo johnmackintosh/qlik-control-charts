@@ -49,6 +49,8 @@ Now the key to getting this working properly - calculating the standard deviatio
 
 * Do not use the built in StdDev functions*
 
+![image](https://user-images.githubusercontent.com/3278367/70189476-4fca3900-16eb-11ea-8793-725ab79c60db.png)
+
 
 
 
