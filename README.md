@@ -40,7 +40,16 @@ For SPC, typically between 11 and 25 data points forms a good basis for initial 
 if(RowNo()=1,RangeAvg(below(p,0,$(vNumCLPoints))),
 If(RowNo()> 1, Above((Centre))))
 
-This expression calculates the average of the first n rows - where n is the number of points returned by the slider you have set up above.
+This expression starts at row 1 and calculates the average of the first n rows - where n is the number of points returned by the slider you have set up above. From row 2 onwards it refers back to the row imediately above.  
+This is very much like typing a formula in cell A1 in Excel, then typing =A1 in cell A2, before dragging the formula downwards.
+In short - we are locking the centre line to the average of these first n rows.
+
+
+Now the key to getting this working properly - calculating the standard deviation.
+
+* Do not use the built in StdDev functions*
+
+
 
 
 
