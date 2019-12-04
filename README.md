@@ -89,17 +89,56 @@ If (Centre - (2*SD) < 0, 0, Centre - (2*SD))
 For the lower control and warning limits, if the value is less than 0, then we plot 0, else the calculated limits
 
 
+# Optional - highlight points outside limits
+
+![image](https://user-images.githubusercontent.com/3278367/70190159-198db900-16ed-11ea-9da3-902f5ab58dba.png)
+
+![image](https://user-images.githubusercontent.com/3278367/70190169-1db9d680-16ed-11ea-8de1-8dbc99dbae6e.png)
+
+![image](https://user-images.githubusercontent.com/3278367/70190182-23afb780-16ed-11ea-95fd-0e6932056098.png)
+
+
+
+This is optional. 
+You might like to style the control  limits to denote the control period by alternating between solid ( control period) and dashed (outside control period)
+
+You may also want to highlight points outside the limits.
+
+The following expressions should help - 
+
+//Chart Line Style Attribute	
+if(RowNo() <= vNumCLPoints, '<S1>', '<S3>') 
+  
+Repeat for each control limit as required  
+  
+  
+=//if outside the limits, display the value, else 0
+
+IF(p > UCL,p,
+IF((p < LCL),p,
+IF((p > UWL AND p < UCL),p,
+IF((p < LWL AND p > LCL),p,
+0
+))))
+
+# colour points outside limits
+
+// beyond limit  
+IF(p > UCL,RGB(255,0,0),
+IF((p < LCL),RGB(255,0,0),
+IF((p > UWL AND p < UCL),RGB(255,128,0),
+IF((p < LWL AND p > LCL),RGB(255,128,0),
+RGB(141,170,203)
+))))
 
 
 
 
 
+  
 
 
 
-UCL : 
-Centre + (3*SD) 
-Centre + (3*SD)
 
 
 
