@@ -64,6 +64,43 @@ sqrt((Centre * (1 - Centre))/ sum({$<Type ={"P"}>}[Denominator]))
 There are Upper and Lower Control limits, and Upper and Lower Warning Limits.
 
 
+![image](https://user-images.githubusercontent.com/3278367/70189839-42fa1500-16ec-11ea-907f-59565acf900f.png)
+
+![image](https://user-images.githubusercontent.com/3278367/70189844-47263280-16ec-11ea-982f-8fc8952e5aff.png)
+
+![image](https://user-images.githubusercontent.com/3278367/70189849-4b525000-16ec-11ea-8c2d-577dbc265ef6.png)
+
+![image](https://user-images.githubusercontent.com/3278367/70189857-50170400-16ec-11ea-88b4-1eb0bd8f90a7.png)
+
+
+// UCL 
+Centre + (3*SD)
+
+//LCL
+If(Centre - (3*SD) < 0,0,Centre - (3*SD))
+// if LCL < 0, then 0, else LCL
+
+=//UWL
+Centre + (2 * SD)
+
+// LWL
+If (Centre - (2*SD) < 0, 0, Centre - (2*SD))
+
+For the lower control and warning limits, if the value is less than 0, then we plot 0, else the calculated limits
+
+
+
+
+
+
+
+
+
+
+UCL : 
+Centre + (3*SD) 
+Centre + (3*SD)
+
 
 
 
