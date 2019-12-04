@@ -23,7 +23,8 @@ This may not be necessary with your real life data
 
 ![image](https://user-images.githubusercontent.com/3278367/70189030-193fee80-16ea-11ea-8b6a-3a510edb1546.png)
 
-//p
+//p  
+
 Sum ({$<Type={"P"}>}Numerator/Denominator)
 
 Use a slider (available within Sense as part of the Qlik dashboard extensions, or within QlikView), define a variable
@@ -35,7 +36,7 @@ For SPC, typically between 11 and 25 data points forms a good basis for initial 
 ![image](https://user-images.githubusercontent.com/3278367/70189104-45f40600-16ea-11ea-87af-26e1feb58f1c.png)
 
 
-=// Centre line
+=// Centre line  
 if(RowNo()=1,RangeAvg(below(p,0,$(vNumCLPoints))),
 If(RowNo()> 1, Above((Centre))))
 
