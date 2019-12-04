@@ -1,0 +1,68 @@
+Sheet Name	ObjectID	Object Name	Location	Expression
+
+SPC	CH07	P Chart (Percentages)	Chart Main Expression	=//p
+Sum ({$<Type={"P"}>}Numerator/Denominator)
+
+
+SPC	CH07	P Chart (Percentages)	Chart Main Expression	=// Centre line
+
+if(RowNo()=1,RangeAvg(below(p,0,$(vNumCLPoints))),
+If(RowNo()> 1, Above((Centre))))
+
+/*
+vCentre:
+if(RowNo()=1,RangeAvg(below(Count,0,$(vNumCLPoints))))
+*/
+ 
+ 
+SPC	CH07	P Chart (Percentages)	Chart Line Style Attribute	==if(RowNo() <= vNumCLPoints, '<S1>', '<S3>') 
+
+SPC	CH07	P Chart (Percentages)	Chart Main Expression	=// UCL
+Centre + (3*SD)
+//$(vUCL)
+
+ 
+SPC	CH07	P Chart (Percentages)	Chart Line Style Attribute	==if(RowNo() <= vNumCLPoints, '<S1>', '<S3>') 
+
+SPC	CH07	P Chart (Percentages)	Chart Main Expression	=//LCL
+If(Centre - (3*SD) < 0,0,Centre - (3*SD))
+// if LCL < 0, then 0, else LCL
+
+SPC	CH07	P Chart (Percentages)	Chart Line Style Attribute	==if(RowNo() <= vNumCLPoints, '<S1>', '<S3>') 
+
+SPC	CH07	P Chart (Percentages)	Chart Main Expression	=//UWL
+Centre + (2 * SD)
+ 
+ 
+
+SPC	CH07	P Chart (Percentages)	Chart Line Style Attribute	==if(RowNo() <= vNumCLPoints, '<S1>', '<S3>') 
+
+SPC	CH07	P Chart (Percentages)	Chart Main Expression	=// LWL
+If (Centre - (2*SD) < 0, 0, Centre - (2*SD))
+
+
+SPC	CH07	P Chart (Percentages)	Chart Line Style Attribute	==if(RowNo() <= vNumCLPoints, '<S1>', '<S3>') 
+
+SPC	CH07	P Chart (Percentages)	Chart Main Expression	=//if outside the limits, display the value, else 0
+
+IF(p > UCL,p,
+IF((p < LCL),p,
+IF((p > UWL AND p < UCL),p,
+IF((p < LWL AND p > LCL),p,
+0
+))))
+
+SPC	CH07	P Chart (Percentages)	Chart Background Color Attribute	=// beyond limit
+// expression: p
+// set the point colour : 
+IF(p > UCL,RGB(255,0,0),
+IF((p < LCL),RGB(255,0,0),
+IF((p > UWL AND p < UCL),RGB(255,128,0),
+IF((p < LWL AND p > LCL),RGB(255,128,0),
+RGB(141,170,203)
+))))
+
+SPC	CH07	P Chart (Percentages)	Chart Main Expression	=//SD 
+sqrt((Centre * (1 - Centre))/ sum({$<Type ={"P"}>}[Denominator]))
+
+
