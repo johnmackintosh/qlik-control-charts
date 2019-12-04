@@ -47,7 +47,7 @@ In short - we are locking the centre line to the average of these first n rows.
 
 Now the key to getting this working properly - calculating the standard deviation.
 
-* Do not use the built in StdDev functions*
+* Do not use the built in StdDev functions *
 
 ![image](https://user-images.githubusercontent.com/3278367/70189476-4fca3900-16eb-11ea-8793-725ab79c60db.png)
 
