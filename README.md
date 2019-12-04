@@ -1,6 +1,10 @@
 # qlik-control-charts
 materials for and from my presentation to the  Qlik Healthcare Dev Group September Gathering 2017-09-14
 
+[See the original presentation here](https://www.youtube.com/watch?v=OVkUOTA-GQw)
+
+
+
 
 - See attached powerpoint for examples of these charts
 - Most charts are built in a similar manner - but the method of calculating SD varies for each one
