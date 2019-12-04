@@ -21,6 +21,8 @@ These chart expressions also work in Sense.
 Assuming you are using the sample data, we will need to specify the 'Type' variable in the set analysis.
 This may not be necessary with your real life data
 
+![image](https://user-images.githubusercontent.com/3278367/70189030-193fee80-16ea-11ea-8b6a-3a510edb1546.png)
+
 //p
 Sum ({$<Type={"P"}>}Numerator/Denominator)
 
